@@ -14,16 +14,14 @@ int main()
   sleep(1);
   for(i=0;i<n;i++)
   {
-    min=a[i];
-    for(j=i+1;j<n&&sta=false;j++)
+    for(j=i;j<n&&(sta=false);j++)
     {
       sta=true;
-      if(min<a[j])
+      if(a[j+1]<a[j])
       {
-        min=a[j];
-        t=a[i];
-        a[i]=a[j];
-        a[j]=t;
+        t=a[j];
+        a[j]=a[j+1];
+        a[j+1]=t;
         sta=false;
       }
     }
